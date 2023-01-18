@@ -1,16 +1,13 @@
 {
   "title": "keypeer.org",
   "subtitle": "The API key peering thing (tm)",
+  "cname": "keypeer.org",
   "owner": { "name": "Mark Washeim", "email": "blueprint@poetaster.de" },
   "social": { "github": "poetaster/keypeer.org" },
   "seo": {
     "title": "keypeer.org",
     "description": "The API key peering org.",
     "author": "Mark Washeim, et. al.",
-    "keywords": [
-      "API keys",
-      "FOSS",
-    ]
-   },
-   "cname": "keypeer.org"
+    "keywords": [ "API keys", "FOSS" ]
+  }
 }
