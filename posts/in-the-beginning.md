@@ -1,7 +1,7 @@
 ---
 title: keypeer.org - The Beginning
 date: 2023-01-18
-permalink: /the-beginning.html
+permalink: /the-beginning
 ---
 
 # The Beginning
