@@ -2,6 +2,8 @@
   "title": "keypeer.org",
   "subtitle": "The API key peering thing (tm)",
   "cname": "keypeer.org",
+  "newsletter": "",
+  "footer": "share your keys!",
   "owner": { "name": "Mark Washeim", "email": "blueprint@poetaster.de" },
   "social": { "github": "poetaster/keypeer.org" },
   "seo": {
