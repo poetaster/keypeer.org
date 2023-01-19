@@ -17,6 +17,12 @@ keypeer itself does not accept payment but only registers an anonymous user key 
 
 As an example, many map services require significant data processing and data serving expenses. While OpenStreetMaps dataset is freely available, it has to be processed into specific database formats to be served as map tiles, provide search and routing. Multiple providers exist that are focused in providing privacy respecting service, but the mechanism used for payment of the services is through application API keys which  require the application developer to pay for the service provided to end users. While it is a viable financial model for proprietary applications, FOSS applications lack a mechanism to enable users to directly pay for the service. Keypeer would enable users to contribute a share of the cost of API calls they make.
 
+Other examples of types of services which require keys or proprietary licenses:
+
+  * transportation authorities, which require use of their apps or limit the use of the apis
+  * news service providers like Reuters and AP or the aggregator newsapi.org. These charge upward of 450 USD a month. 
+  *  
+
 Some examples of transparent financial intermediaries: https://opencollective.com/europe. https://commonsconservancy.org/ https://www.transnationalgiving.eu/
 
 # Technical Implementation
