@@ -6,4 +6,5 @@ relative_links:
 include:
   - README.md
   - LICENSE.md
+  - about.md
 
