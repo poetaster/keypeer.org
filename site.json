@@ -1,6 +1,6 @@
 {
   "title": "keypeer.org",
-  "subtitle": "The keypeer project is an api key service.  We enable developers and users of software to combine resources to fund the use of thrid party apis",
+  "subtitle": "The keypeer project provides an api key intermediary service.  We enable developers and users of software to combine resources to fund the use of thrid party apis",
   "cname": "keypeer.org",
   "footer": "share your keys!",
   "newsletter": {"currentCount": "0", "revueUsername": "unknown" },
