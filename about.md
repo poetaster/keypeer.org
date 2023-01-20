@@ -2,6 +2,10 @@
 
 For developers of Free Open Software (FOSS), keypeer enables them to include a paid third party service in their application and enable it for a user who has donated without having an ongoing business relationship and without storing that user's personal data. Enabling FOSS application users to pay for services allows them to support services that respect privacy and require significant resources.
 
+A birdseye view of the process.
+
+(overview.png)[An overview of the actors and actions involving keypeer]
+
 The keypeer project provides an api key intermediary service. It aims to serve the following goals:
 
   * give user communities access to services that would otherwise require proprietary software
