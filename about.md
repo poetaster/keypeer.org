@@ -4,7 +4,7 @@ For developers of Free Open Software (FOSS), keypeer enables them to include a p
 
 A birdseye view of the process.
 
-[An overview of the actors and actions involving keypeer](overview.png)
+![An overview of the actors and actions involving keypeer](overview.png)
 
 The keypeer project provides an api key intermediary service. It aims to serve the following goals:
 
