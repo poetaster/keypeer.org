@@ -27,7 +27,7 @@ Other examples of types of services which require keys or proprietary licenses:
   * news service providers like Reuters and AP or the aggregator newsapi.org. These charge upward of 450 USD a month. 
   *  
 
-Some examples of transparent financial intermediaries: https://opencollective.com/europe. https://commonsconservancy.org/ https://www.transnationalgiving.eu/
+Some examples of transparent financial intermediaries: (https://opencollective.com/europe)[Open Collective]. (https://commonsconservancy.org/)[Commons Conservancy] (https://www.transnationalgiving.eu/)[Transnational Giving]
 
 # Technical Implementation
 
