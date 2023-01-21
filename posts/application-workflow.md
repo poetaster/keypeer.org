@@ -1,7 +1,7 @@
 ---
-title: How does the developer use this thing?
+title: Application workflow
 date: 2023-01-19
-permalink: /applications
+permalink: /application-workflow
 ---
 
 The work flow for the application should remain simple. 
