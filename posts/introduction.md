@@ -49,6 +49,10 @@ Protecting keys is a challenging problem. We propose to use fully homomorphic en
 
 The service will be prototyped in the Python and C++ languages, most probably with a framework like Flask and Werkzeug for the api endpoints themselves. Client side code will initially be prototyped in javascript and c++. 
 
+# Financial Development
+
+We wish to follow a multi-pronged funding strategy. Obviously, we wish to enable individual users to contribute on a use base. We also intend to do traditional recurring funding drives. There should, however, also be a possibility to enlist corporate support. Given that keypeer can simplify and secure use of high values secrets which can be of great use within an organization that subscribes to multiple services, we anticipate being able to enlist corporate donors/sponsors. As a first step, we will approach companies like mapbox and maptiler to guage interest.
+
 # Workflows
 
 User App Token → link to purchase with Token → payment → Token registered with keypeer → User App calls keypeer api, use cleared.

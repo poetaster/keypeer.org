@@ -31,7 +31,7 @@ This is a first, we believe.
 
 The design of the system poses a number of challenges. Some api's can only use single api keys, some can issue ephemeral keys.  This leads rise to a need to support metering of use or dynamic allocation of short lived keys depending on the service provider. Either scheme has it's own interesting issues. 
 
-The most challenging technical aspect will be probably be homomorphic cryptography of the user / key store.
+The most challenging technical aspect will be probably be homomorphic cryptography of the user / key store. Since multiple high value keys need to be stored, the value store must be entirely encrypted with a scheme like Fast Proxy Re-Encryption for Publish/Subscribe (see: https://eprint.iacr.org/2017/410).
 
 # Describe the ecosystem of the project, and how you will engage with relevant actors and promote the outcomes?
 
