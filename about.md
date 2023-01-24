@@ -4,4 +4,4 @@ Two developers, @rinigus and @karry, both pursing somewhat different goals in bu
 
 And so began a 'quest' of sorts to start a general service to connect payments and services without sacrificing user anonymity or the developer's savings.
 
-The founding of a new user society, the sailmates, gave these discussions a formal framework to further develope.
+The founding of a new user society, the [Sailmates](https://sailmates.net/), gave these discussions a formal framework to further develope. 
