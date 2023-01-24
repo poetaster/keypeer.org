@@ -8,7 +8,3 @@ The keypeer project provides an api key intermediary service. It aims to serve t
   * provide a service / application agnostic api to act as an intermediary
   * minimize the storing and transmission of personal data 
   * store keypeer data using modern homomorphic cryptography
-
-A birdseye view of the process.
-
-![An overview of the actors and actions involving keypeer](overview.png)
