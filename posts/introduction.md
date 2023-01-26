@@ -3,6 +3,7 @@ title: Introduction
 date: 2023-01-20
 permalink: /introduction
 ---
+
 Many applications today depend on data and servcies which they do not directly control. Some of this data is freely available like that of the Wikipedia foundation or the Open Street maps project. Much more data is distributed by means that are to difficult or expensive for individual software users, developers or academic researchers to use. When access to proprietary data or services is available it is often made so by means of an application programming interface accessible via protoocls like http, aka the web.
 
 keypeer enables users to support third party service use in FOSS (free and open source software) applications and to benefit from those services that they might individually not be able to access without sacrificing privacy. Users often lack simple and transparent ways to support a project financially and to combine this with the use of the software.  Often developers simply can't fund the use of third party data or services. Keypeer connects them to users who collectively can supply the financial support.
