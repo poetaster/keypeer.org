@@ -6,8 +6,6 @@ The keypeer project provides an API key intermediary service. It aims to serve t
   * free developers to provide access to paid services
   * provide a service / application agnostic api to act as an intermediary
   * minimize the storing and transmission of personal data 
-  * store keypeer data using modern homomorphic cryptography
-
 
 Many applications today depend on data and servcies which they do not directly control. Some of this data is freely available like that of the Wikipedia foundation or the Open Street maps project. Much more data is distributed by means that are to difficult or expensive for individual software users, developers or academic researchers to use. When access to proprietary data or services is available it is often made so by means of an application programming interface accessible via protoocls like http, aka the web.
 
