@@ -1,6 +1,6 @@
 # Abstract: Can you explain the whole project and its expected outcome(s).
 
-The keypeer will establish a bridge linking end-users and complex online services, the bridge that is missing for free and open source software (FOSS). By allowing end-users to pay for services, it will allow to support services based on open data with transparent payment model instead of privacy abusing ones.
+The keypeer will establish a bridge linking end-users and complex online services, the bridge that is missing for free and open source software (FOSS). By allowing end-users to pay for services, it will support services based on open data with transparent payment model instead of privacy abusing proprietary ones.
 
 In its core, keypeer provides an API key intermediary service. It will:
 - give FOSS communities access to services otherwise requiring proprietary software
