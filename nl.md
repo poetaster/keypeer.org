@@ -6,6 +6,7 @@ The keypeer project provides an API key intermediary service. It will:
   * provide paid services for users of free and open source software (FOSS)
   * provide a service / application agnostic api intermediary
   * minimize the storing and transmission of personal data 
+
 keypeer enables FOSS developers to include a paid third party service in their application and enable it for a user who has donated. Software users are enabled to contribute to the costs of api usage of a variety of apis.
 
 An example. Although the Open Street Maps dataset is freely available, it has to be processed to be served as map tiles and for search/routing. Payment of the services is through application API keys which require the application developer to pay for the service provided to end users. 
@@ -22,18 +23,12 @@ The budget will cover personal expenses, consulting (legal & security), communic
 
 ## Budget
 
-2000 - 4000 :  API access 6 months, for a 'live' test period (assuming mapbox, maptiler, stadia and newsapi.org)
-In order to test the system under load, it will require live data.
-
-100 / month x 6  : server hosting, minor expenses
-
-24000 - 6 months developer time (part time, 20 hours a week, 50 Euro/h). 
-
-1-2000 - Consulting with API service providers and payment processors, collectives, etc.
-
-1-2000 - legal consulting. We will no doubt need to do legal risk assesments as also the following.
-
-5-10000 - Independant Audit. A proper final audit of the code could easily cost more.
+ * 2000 - 4000 :  API access 6 months, for a 'live' test period (assuming mapbox, maptiler, stadia and newsapi.org)
+ * 100 / month x 6  : server hosting, minor expenses
+ * 24000 - 6 months developer time (part time, 20 hours a week, 50 Euro/h). 
+ * 1-2000 - Consulting with API service providers and payment processors, collectives, etc.
+ * 1-2000 - legal consulting. We will no doubt need to do legal risk assesments as also the following.
+ * 5-10000 - Independant Audit. A proper final audit of the code could easily cost more.
 
 # Compare your own project with existing or historical efforts.
 
