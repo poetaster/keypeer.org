@@ -3,23 +3,23 @@
 The keypeer project provides an API key intermediary service. It aims to serve the following goals:
 
   * give user communities access to services that would otherwise require proprietary software
-  * free developers to provide access to paid services
+  * provide access to paid services for users of free and open source softwares
   * provide a service / application agnostic api to act as an intermediary
   * minimize the storing and transmission of personal data 
 
-Many applications today depend on data and servcies which they do not directly control. Some of this data is freely available like that of the Wikipedia foundation or the Open Street maps project. Much more data is distributed by means that are to difficult or expensive for individual software users, developers or academic researchers to use. When access to proprietary data or services is available it is often made so by means of an application programming interface accessible via protoocls like http, aka the web.
+Many applications today depend on data and services which they do not directly control. Some of this data is freely available like that of the Wikipedia foundation or the Open Street Map project. Much more data is distributed by means that are too difficult or expensive for individual software users, developers or academic researchers to use.
 
-keypeer will enable users to support third party service use in FOSS (free and open source software) applications and to benefit from those services that they might individually not be able to access without sacrificing privacy. Users often lack simple and transparent ways to support a project financially and to combine this with the use of the software.  Often developers simply can't fund the use of third party data or services. Keypeer connects them to users who collectively can supply the financial support.
+keypeer will enable users to support third party services used in free and open source softwares (FOSS) and to benefit from those services that they might individually not be able to access without sacrifying privacy. Users often lack simple and transparent ways to support a project financially and to combine this with the use of the software. Often developers simply can't fund the use of third party data or services, and as a direct result, these data are accessible only via one or very few software, impacting free choice and concurrency. Keypeer connects the third-party data providers to users who then can collectively supply the financial support.
 
 A birdseye view of the process.
 
 ![An overview of the actors and actions involving keypeer](overview.png)
 
-For developers of Free Open Software (FOSS), keypeer enables them to include a paid third party service in their application and enable it for a user who has donated without having an ongoing business relationship and without the project storing that user's personal data. Enabling FOSS application users to pay for services allows them to support services that respect privacy and require significant resources.
+For developers of Free Open Source Software (FOSS), keypeer enables them to include a paid third party service in their application and enable it for a user who has donated without having an ongoing business relationship and without the project storing that user's personal data. Enabling FOSS application users to pay for services allows them to support services that respect privacy and require significant resources.
 
 ## Example API(s)
 
-As an example, many map services require significant data processing and data serving expenses. Although the OpenStreetMaps dataset is freely available, it has to be processed into specific database formats to be served as map tiles and to provide search and routing. Multiple providers exist that are focused in providing privacy respecting service, but the mechanism used for payment of the services is through application API keys which  require the application developer to pay for the service provided to end users. While it is a viable financial model for proprietary applications, FOSS applications lack a mechanism to enable users to directly pay for the service. Keypeer would enable users to contribute a share of the cost of API calls they make.
+When access to proprietary data or services is available it is often made so by means of an application programming interface (API) accessible via protocols like HTTP, i.e. the web. As an example, many map services require significant data processing and data serving expenses. Although the Open Street Map dataset is freely available, it has to be processed into specific database formats to be served as map tiles and to provide search and routing. Multiple providers exist that are focused in providing privacy respecting services, but the mechanism used for payment of the services is through application API keys which require the application developer to pay for the service provided to end users. While it is a viable financial model for proprietary applications, FOSS applications lack a mechanism to enable users to directly pay for the service. Keypeer would enable users to contribute a share of the cost of API calls they make.
 
 Other examples of types of services which require keys or proprietary licenses:
 
@@ -31,9 +31,9 @@ Other examples of types of services which require keys or proprietary licenses:
 
 The technical part consists of a web service (REST API), a freely accessible interface that developers can use for accessing services API keys through keypeer.
 
-Protecting keys is a challenging problem. We propose to use fully homomorphic encryption [OpenFHE](https://en.wikipedia.org/wiki/OpenFHE) for all storage of user and third party key material on servers. See also: [Fast Proxy Re-Encryption for Publish/Subscribe Systems](https://eprint.iacr.org/2017/410) from Polyakov, Rohloff, Sahu, and Vaikuntanthan for some relavant research with concreate implementations in the domain.
+Protecting keys is a challenging problem. We propose to use fully homomorphic encryption [OpenFHE](https://en.wikipedia.org/wiki/OpenFHE) for all storage of user and third party key material on servers. See also: [Fast Proxy Re-Encryption for Publish/Subscribe Systems](https://eprint.iacr.org/2017/410) from Polyakov, Rohloff, Sahu, and Vaikuntanthan for some relevant research with working implementations in the domain.
 
-The service will be prototyped in the Python and C++ languages, most probably with a framework like Flask and Werkzeug for the api endpoints themselves. Client side code will initially be prototyped in javascript and c++. 
+The service will be prototyped in the Python and C++ languages, most probably with a framework like Flask and Werkzeug for the api endpoints themselves. Client side code will initially be prototyped in javascript and C++. 
 
 ## Social Goals
 
@@ -41,9 +41,9 @@ One of the unique aspects of the keypeer project is that it is not limited to on
 
 Another of the goals keypeer has is to create a transparent means for users and developers to observe the financial aspects of the operation of keypeer and the use of the API keys themselves.
 
-keypeer will not accept payment for services as in a taditional subsription model but rather allocate means managed independantly.  Management of the payments will be done by a not-for-profit association using a transparent intermediary.
+keypeer will not accept payment for services as in a traditional subsription model but rather allocate means managed independantly.  Management of the payments will be done by a not-for-profit association using a transparent intermediary.
 
-Some examples of transparent financial intermediaries: [Open Collective](https://opencollective.com/europe). [Commons Conservancy](https://commonsconservancy.org/) [Transnational Giving](https://www.transnationalgiving.eu/)
+Some examples of transparent financial intermediaries: [Open Collective](https://opencollective.com/europe), [Commons Conservancy](https://commonsconservancy.org/) or [Transnational Giving](https://www.transnationalgiving.eu/).
 
 ## Financial Development
 
@@ -88,7 +88,7 @@ Other technical challenges may include homomorphic cryptography of the user / ke
 
 A number of people and projects are already taking part in the discussion. Most important for the purposes of prototyping at this stage are:
 
-https://github.com/rinigus/pure-maps which will be used for testing a number of api's, including maptiler and mapbox, concurrently
+https://github.com/rinigus/pure-maps which will be used for testing a number of api's, including maptiler and mapbox, concurrently.
 
 Regarding pure maps: which will be used for testing a number of API's for accessing map data, such as MapTiler and Stadia, concurrently.
 
