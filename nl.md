@@ -15,7 +15,7 @@ The web service, in REST, will be prototyped in the Python and C++ together with
 
 We will network with other projects to create a financial commons with transparent financials, such as OpenCollective.
 
-# Requested amount  50000
+# Requested amount  39000
 
 # Explain what the requested budget will be used for? 
 
@@ -26,9 +26,9 @@ The budget will cover personal expenses, consulting (legal & security), communic
  * 2000 - 4000 :  API access 6 months, for a 'live' test period (assuming mapbox, maptiler, stadia and newsapi.org)
  * 100 / month x 6  : server hosting, minor expenses
  * 24000 - 6 months developer time (part time, 20 hours a week, 50 Euro/h). 
- * 1-2000 - Consulting with API service providers and payment processors, collectives, etc.
- * 1-2000 - legal consulting. We will need to do legal risk assessment as also the following.
- * 5-10000 - Independant security Audit. 
+ * up to 2000 - Consulting with API service providers and payment processors, collectives, etc.
+ * up to 2000 - legal consulting. We will need to do legal risk assessment as also the following.
+ * up to 10000 - Independant security Audit. 
 
 # Compare your own project with existing or historical efforts.
 

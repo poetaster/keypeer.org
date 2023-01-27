@@ -6,8 +6,7 @@ permalink: /application-workflow
 
 The work flow for the application should remain simple. 
 
-It's still not clear if application IDs, as disctinct from application instance IDs (this users instance of app). will be generated before use of the REST API, or entirely dynamically.
-
+There are several workflows considered on keypeer side. Below, find two workflows that are considered and that will be the base for discussion between developers and other parties.
 
 ## keypeer registration flow
 
@@ -19,11 +18,6 @@ Formulation from [#4 issue 4](https://github.com/poetaster/keypeer.org/issues/4#
 4. User would use TOKEN and label his/her payment
 5. User would use keypeer API key in the application for requesting services API keys served by keypeer
 6. To check payment status, keypeer would again sign received API key and compare with payed tokens
-
-Alternate formulation: 
-
-Formulation originating in [#2 issue 2](https://github.com/poetaster/keypeer.org/issues/2#issuecomment-1404049386) 
-
 
 ## Initial thoughts
 
