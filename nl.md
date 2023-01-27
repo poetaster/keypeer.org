@@ -2,18 +2,18 @@
 
 The keypeer project provides an API key intermediary service. It will:
 
-  * give communities access to services otherwise requiring proprietary software
+  * give communities access to services otherwise requiring proprietary softwares
   * provide paid services for users of free and open source software (FOSS)
   * provide a service / application agnostic api intermediary
-  * minimize the storing and transmission of personal data 
+  * minimize the storing and transmission of personal data
 
-keypeer enables FOSS developers to include a paid third party service in their application and enable it for a user who has donated. Software users are enabled to contribute to the costs of api usage of a variety of apis.
+keypeer enables FOSS developers to include a paid service in their application and enable it for a user who has donated. With keypeer, software users can contribute to the costs of API usage.
 
-An example. Although the Open Street Maps dataset is freely available, it has to be processed to be served as map tiles and for search/routing. Payment of the services is through application API keys which require the application developer to pay for the service provided to end users. 
+An example: although the Open Street Map dataset is freely available, it must be processed to appear as map tiles or for routing. Payment of the processing services is through application API keys which require the application developer to pay for the service provided to end users. keypeer will connect payments, users and service use.
 
-The web service keypeer, in REST, will be prototyped in the Python and C++. Client side code will initially be prototyped in javascript and c++. 
+The web service, in REST, will be prototyped in the Python and C++. Client side code will initially be prototyped in javascript and C++.
 
-We will network with a variety of projects to create a financial commons with transparent financials.  An example intermediary, [Open Collective](https://opencollective.com/europe). 
+We will network with other projects to create a financial commons with transparent financials.  An example intermediary, [Open Collective](https://opencollective.com/europe). 
 
 # Requested amount  50000
 
@@ -27,8 +27,8 @@ The budget will cover personal expenses, consulting (legal & security), communic
  * 100 / month x 6  : server hosting, minor expenses
  * 24000 - 6 months developer time (part time, 20 hours a week, 50 Euro/h). 
  * 1-2000 - Consulting with API service providers and payment processors, collectives, etc.
- * 1-2000 - legal consulting. We will no doubt need to do legal risk assesments as also the following.
- * 5-10000 - Independant Audit. A proper final audit of the code could easily cost more.
+ * 1-2000 - legal consulting. We will need to do legal risk assessment as also the following.
+ * 5-10000 - Independant security Audit. 
 
 # Compare your own project with existing or historical efforts.
 
@@ -40,7 +40,7 @@ The design of the system poses a number of challenges. Some api's can only use s
 
 We anticipate supporting developers of diverse types of software in integrating keypeer will be the most time consuming challenge.
 
-Beside having to support different patterns in application usage, we will also be facing issues with traditional financial models and payment processing. Connecting securely to payment services without sacrificing use anonymity while also being able to do necessary 'accounting' will no doubt be a technical challenge.
+Beside having to support different patterns in application usage, we will also be facing issues with traditional financial models and payment processing. Connecting securely to payment services without sacrificing user anonymity while also being able to do necessary 'accounting' will no doubt be a technical challenge.
 
 Other technical challenges may include homomorphic cryptography of the user / key store. Since multiple high value keys need to be stored, the value store must be entirely encrypted with a scheme like Fast Proxy Re-Encryption for Publish/Subscribe (see: https://eprint.iacr.org/2017/410).
 
@@ -54,5 +54,5 @@ Regarding pure maps: which will be used for testing a number of API's for access
 
 As soon as the first stage is ready, we will engage with the other mapping applications (Gnome Maps, uNav, and others). We will promote this new opportunity in relevant mobile and desktop linux and other FOSS communities.
 
-https://github.com/poetaster/allthenews which may be used for testing with the newsapi.org apis.
+Time permitting, we may look at use of news related apis in the context of Journalistic research.  https://github.com/poetaster/allthenews might be used for testing with the newsapi.org apis.
 
