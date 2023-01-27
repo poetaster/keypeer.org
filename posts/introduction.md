@@ -9,12 +9,10 @@ Many applications today depend on data and servcies which they do not directly c
 keypeer enables users to support third party service use in FOSS (free and open source software) applications and to benefit from those services that they might individually not be able to access without sacrificing privacy. Users often lack simple and transparent ways to support a project financially and to combine this with the use of the software.  Often developers simply can't fund the use of third party data or services. Keypeer connects them to users who collectively can supply the financial support.
 
 The keypeer project provides an API key intermediary service. It aims to serve the following goals:
-
   * give user communities access to services that would otherwise require proprietary software
-  * free developers to provide access to paid services
+  * provide access to paid services for users of free and open source softwares
   * provide a service / application agnostic api to act as an intermediary
   * minimize the storing and transmission of personal data 
-  * store keypeer data using modern homomorphic cryptography
 
 A birdseye view of the process.
 
