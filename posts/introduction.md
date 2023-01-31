@@ -52,4 +52,4 @@ We wish to follow a multi-pronged funding strategy. Obviously, we wish to enable
 
 # Workflows
 
-Workflow is described [separately](application-workflow.md)
+Workflow is described [separately](application-workflow.html)
