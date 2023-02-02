@@ -10,7 +10,6 @@ In its core, keypeer provides an API key intermediary service. It will:
 Keypeer enables FOSS developers to include a paid service in their application and enable it for a paying users. With keypeer, end-users can contribute to the service costs.
 
 An example: although the OpenStreetMap dataset is freely available, it must be processed for visualization or routing. This requires resources that can be payed for by end-users via keypeer. 
-
 The web service, in REST, will be prototyped in the Python and C++ together with the client side code.
 
 We will network with other projects to create a financial commons with transparent financials, such as OpenCollective.

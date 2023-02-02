@@ -42,7 +42,9 @@ Some examples of transparent financial intermediaries: [Open Collective](https:/
 
 The technical part consists of a web service (REST API), a freely accessible interface that developers can use for accessing services API keys through keypeer.
 
-Protecting keys is a challenging problem. We propose to use fully homomorphic encryption [OpenFHE](https://en.wikipedia.org/wiki/OpenFHE) for all storage of user and third party key material on servers. See also: [Fast Proxy Re-Encryption for Publish/Subscribe Systems](https://eprint.iacr.org/2017/410) from Polyakov, Rohloff, Sahu, and Vaikuntanthan for some relavant research with concreate implementations in the domain.
+Access to API keys will be managed by a ZKP (zero knowledge proof) approach. When a user makes a donation, keypeer produces a 'donation certificate'. Whenever the user requires an API key, they can prove payment with this certificate using a ZK proof which does not reveeal their identity.
+
+Protecting keys is a challenging problem. We propose to use something like fully homomorphic encryption [OpenFHE](https://en.wikipedia.org/wiki/OpenFHE) for storage of user and third party key material on servers that must remain secret. 
 
 The service will be prototyped in the Python and C++ languages, most probably with a framework like Flask and Werkzeug for the api endpoints themselves. Client side code will initially be prototyped in JavaScript and C++. 
 
@@ -52,4 +54,8 @@ We wish to follow a multi-pronged funding strategy. Obviously, we wish to enable
 
 # Workflows
 
+<<<<<<< HEAD
 Workflow is described [separately](application-workflow.html)
+=======
+Workflow is described [separately](application-workflow.md)
+>>>>>>> a329b87 ([intro] relate the ZKP approach to the donation flow. reduce the refs to FHE crypto)
