@@ -54,8 +54,4 @@ We wish to follow a multi-pronged funding strategy. Obviously, we wish to enable
 
 # Workflows
 
-<<<<<<< HEAD
 Workflow is described [separately](application-workflow.html)
-=======
-Workflow is described [separately](application-workflow.md)
->>>>>>> a329b87 ([intro] relate the ZKP approach to the donation flow. reduce the refs to FHE crypto)
