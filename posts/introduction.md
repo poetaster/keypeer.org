@@ -42,7 +42,7 @@ Some examples of transparent financial intermediaries: [Open Collective](https:/
 
 The technical part consists of a web service (REST API), a freely accessible interface that developers can use for accessing services API keys through keypeer.
 
-Access to API keys will be managed by a ZKP (zero knowledge proof) approach. When a user makes a donation, keypeer produces a 'donation certificate'. Whenever the user requires an API key, they can prove payment with this certificate using a ZK proof which does not reveeal their identity.
+Access to API keys will be managed by a ZKP (zero knowledge proof) approach. When a user makes a donation, keypeer produces a 'donation certificate'. Whenever the user requires an API key, they can prove payment with this certificate using a ZK proof which does not reveeal their identity. Discussions with interested parties in the community lead to considering the use of Circuittree, a Zero-Knowledge reasoner. [Circuitree IEEE paper](https://ieeexplore.ieee.org/document/9718332)
 
 Protecting keys is a challenging problem. We propose to use something like fully homomorphic encryption [OpenFHE](https://en.wikipedia.org/wiki/OpenFHE) for storage of user and third party key material on servers that must remain secret. 
 
