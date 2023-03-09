@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Application workflow</title>
+    <meta name="description" content="The API key peering org."/>
+    <meta name="keywords" content="API keys,FOSS"/>
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Alegreya:400,400i|Lato:400,400i,700,900|Roboto+Mono:400,300">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+    <link rel="stylesheet" href="/css/normalize.css"/>
+    <link rel="stylesheet" href="/css/theme.css"/>
+</head>
+<body>
+<nav class="nav">
+    <div class="nav__left">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </div>
+    <div class="nav__right">
+        <a target="_blank" href="https://github.com/poetaster/keypeer.org" class="link-github">GitHub</a>
+        <a href="mailto:blueprint@poetaster.de" class="link-email">Email</a>
+    </div>
+</nav>
+
+<article class="mar-b-7">
+    <header class="text-center">
+        <time class="mar-b-6" datetime="Thu, January 19, 2023">Thu, January 19, 2023</time>
+        <h1 class="mar-b-7">Application workflow</h1>
+    </header>
+    <p>The work flow for the application should remain simple. </p>
+<p>There are several workflows considered on keypeer side. Below, find two workflows that are considered and that will be the base for discussion between developers and other parties.</p>
+<h2 id="keypeerregistrationflow">keypeer registration flow</h2>
+<p>Formulation from <a href="https://github.com/poetaster/keypeer.org/issues/4#issuecomment-1399534932">#4 issue 4</a></p>
+<ol>
+<li>User clicks on "Subscribe" button</li>
+<li>Keypeer would generate random API key that user is expected to keep as ID and password.</li>
+<li>Keypeer would use its secret crypto signature and sign API key to create user's TOKEN</li>
+<li>User would use TOKEN and label his/her payment</li>
+<li>User would use keypeer API key in the application for requesting services API keys served by keypeer</li>
+<li>To check payment status, keypeer would again sign received API key and compare with payed tokens</li>
+</ol>
+<h2 id="initialthoughts">Initial thoughts</h2>
+<p>This workflow description assumes the former as some form of authentication will probably be part of the workflow.</p>
+<ol>
+<li>App. first start submit the application instace ID to keypeer (PUT)</li>
+<li>keypeer aknowledge succeed in storing instance token</li>
+<li>keypeer immediately check if the token is 'paid' and store state. This could be as simple as checking if the token is listed under contributions at https://opencollective/keypeer </li>
+<li>App requests an API key for the application ID (not this instance, but the global key).</li>
+<li>keypeer sends the api key.</li>
+<li>Application stores and utilizes key.</li>
+</ol>
+<p>That's the simple description of the intention.   </p>
+</article>
+
+<footer class="text-center mar-tb-6">
+    © 2023 Mark Washeim, unless otherwise stated.
+</footer>
+
+<script>hljs.highlightAll();</script>
+</body>
+</html>
+
