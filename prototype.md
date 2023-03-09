@@ -26,7 +26,7 @@ Während der Prototype-phase werden Javascript und C++ Clients die Schnittstelle
 
 #  Hast du schon an der Idee gearbeitet? Wenn ja, beschreibe kurz den aktuellen Stand und erkläre die geplanten Neuerungen. * (100w)
 
-Bis jetzt wurde nur skizziert und diskutiert. Impulsgeber is der rinigus,https://github.com/rinigus/pure-maps.  Unter anderem wird mit Ruben De Smet, https://ieeexplore.ieee.org/document/9718332 , ein Zero Knowledge Ansatz der Nutzer Verifikation diskutiert.
+Bis jetzt wurde diskutiert und die ersten API Entwürfe skizziert. Impulsgeber is der rinigus,https://github.com/rinigus/pure-maps.  Unter anderem wird mit Ruben De Smet, https://ieeexplore.ieee.org/document/9718332 , ein Zero Knowledge Ansatz der Nutzer Verifikation diskutiert.
 
 #  Welche ähnlichen Ansätze gibt es schon und was wird dein Projekt anders bzw. besser machen? * (60w)
 
