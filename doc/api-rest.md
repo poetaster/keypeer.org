@@ -13,8 +13,9 @@
 |----|----|----|----
 |`/keys/api/{version}/provider/{provider_id}`| It should allow for multiple `{provider_id}` in a singular request.| GET |  `{TOKEN}`, `{keypeer_api_key}`, `datetime`
 |`/keys/api/{version}/provider/`| Returns a list of providers | GET |  `{TOKEN}`, `{keypeer_api_key}`, `datetime`
-|`/keys/api/{version}/consumer/{consumer_id}` | Request user data |  GET |  `{consumer_id}`, `{provider_id}, `expiry`, {provider_id}`, `expiry`
+|`/keys/api/{version}/consumer/{consumer_id}` | Request user data |  GET |  [ `{application_id}`, `{provider_id}, `expiry` }, {`{application_id}`,`{provider_id}`, `expiry`} ]
 |`/keys/api/{version}/application/{application_id}` | Obtain application specific data  | GET | `{provider_id}`, '{provider_id}`
+|`/keys/api/{version}/application/{application_id}/{provider_id}` | Obtain application provider keys | GET | `[ {`{provider_id}`, `{service_id_key}`}, {`{provider_id}`, '{service_id_key}`]
 |`/admin/api/{version}/provider/{provider_name}`| Create a new api key provider | PUT |  `{provider_id}`, `datetime`
 
 ---
@@ -48,6 +49,21 @@
   "applications": ["application_id", "application_id"],
   "providers": ["provider_id", "provider_id"],
   "payment_status": [ { "application_id, "{status}" }, {"application_id", "{status}"} ],
+}
+```
+---
+`/keys/api/{version}/consumer/{application_id}` PUT
+```json
+{
+  "consumer_id": "{consumer_id}",
+  "keypeer_api_key": "keypeer_api_key",
+  "datetime": "DATETIME",
+  "application_id": ["{application_id}", "{provider_id}"]
+}
+```
+`/keys/api/{version}/consumer` `Response`
+```json
+{
 }
 ```
 ---
