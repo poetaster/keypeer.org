@@ -5,6 +5,7 @@
 | `keypeer_api_key` | Keypeer API key; provided to apps to connect with keypeer
 | `service_api_key` | `provider_id` API key.
 | `application_id` | `application` API key.
+| `consumer_id` | `end user id` .
 
 ---
 
@@ -20,7 +21,7 @@
 `/keys/api/{version}/provider` GET
 ```json
 {
-  "provider_id": ["news_service_id", "map_service_id"],
+  "provider_id": "{application_id}",
   "keypeer_api_key": "service_api_key",
 }
 ```
@@ -32,43 +33,50 @@
 }
 ```
 ---
+`/keys/api/{version}/consumer` GET
+```json
+{
+  "consumer_id": "{application_id}", ???
+  "keypeer_api_key": "keypeer_api_key",
+}
+```
 `/keys/api/{version}/consumer` `Response`
 ```json
 {
   "token": "{payment_token}",
-  "keypeer_api_key" : "{keypeer_api_key}",
   "datetime": "DATETIME",
-  "...": "...",
+  "applications": ["application_id", "application_id"],
+  "providers": ["provider_id", "provider_id"],
+  "payment_status": [ { "application_id, "{status}" }, {"application_id", "{status}"} ],
 }
 ```
 ---
-`/api/{version}/request/{provider_id}` GET
+`/keys/api/{version}/application/{application_id}` GET
 ```json
 {
-  "keypeer_api_key": "{keypeer_api_key}"
+  "keypeer_api_key": "{keypeer_api_key}",
+  "application_id": "{application_id}"
 }
 ```
 
-`/api/{version}/request/{provider_id}` `Response`
+`/keys/api/{version}/application` `Response`
 ```json
-
+  "providers": ["{provider_id}", "{provider_id}"], 
   "service_api_key": "{service_api_key}",
   "expiry": "DATETIME"
 ```
 ---
-`/api/{version}/status` GET
-
+`/keys/api/{version}/application/{application_id}/{provider_id}` GET
 ```json
-
-  "keypeer_api_key": "{keypeer_api_key}"
-  "...": "...",
-
+{
+  "keypeer_api_key": "{keypeer_api_key}",
+  "application_id": "{application_id}",
+  "provider_id": "{provider_id}"
+}
 ```
-`/api/{version}/status` `Response`
 
+`/keys/api/{version}/application/{application_id/{provider_id}` `Response`
 ```json
-
-  "balance": "{float}",
-  "...": "...",
-
+  "service_api_key": "{service_api_key}",
+  "expiry": "DATETIME"
 ```
