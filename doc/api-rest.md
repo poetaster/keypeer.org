@@ -39,7 +39,6 @@
 ```
 ---
 
-```
 `/keys/api/{version}/consumer` GET
 ```json
 {
@@ -57,7 +56,7 @@
   "keypeer_api_key": "keypeer_api_key",
   "application_id": "application_id",
   "providers": ["provider_id", "provider_id"],
-  "payment_status": [ { "application_id, "{status}" }, {"application_id", "{status}"} ],
+  "payment_status": [ { "application_id, "status" }, {"application_id", "status"} ],
 }
 ```
 
@@ -75,6 +74,7 @@ Should this be in the /admin space?
 }
 
 ```
+
 `/keys/api/{version}/consumer` `Response`
 ```json
 {
