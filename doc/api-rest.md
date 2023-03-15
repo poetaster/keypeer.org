@@ -13,10 +13,12 @@
 |----|----|----|----
 |`/keys/api/{version}/provider/{provider_id}`| Provides the `{provider_id}` `{service_api_key}`  | GET |  `{TOKEN}`, `{keypeer_api_key}`, `datetime`
 |`/keys/api/{version}/provider/`| Returns a list of providers | GET |  `{TOKEN}`, `{keypeer_api_key}`, `datetime`
-|`/keys/api/{version}/consumer/{consumer_id}` | Request user data |  GET |  [ `{application_id}`, `{provider_id}, `expiry` }, {`{application_id}`,`{provider_id}`, `expiry`} ]
-|`/keys/api/{version}/application/{application_id}` | Obtain application specific data  | GET | `{provider_id}`, '{provider_id}`
-|`/keys/api/{version}/application/{application_id}/{provider_id}` | Obtain application provider keys | GET | `[ {`{provider_id}`, `{service_id_key}`}, {`{provider_id}`, '{service_id_key}`]
-|`/admin/api/{version}/provider/{provider_name}`| Create a new api key provider | PUT |  `{provider_id}`, `datetime`
+|`/keys/api/{version}/consumer/{consumer_id}` | Request user data |  GET |  [ `application_id`, `provider_id`, `expiry`}, {`application_id`,`provider_id`, `expiry`} ]
+|`/keys/api/{version}/consumer/{application_id}`| Add user application | PUT |  `succes` 
+|`/keys/api/{version}/consumer/{application_id}`| Retrieve {service_api_key} for application | GET | [`provider_id`, 'provider_id`]
+|`/keys/api/{version}/application/{application_id}` | Obtain list of application providers  | GET | [`provider_id`, 'provider_id`]
+|`/keys/api/{version}/application/{application_id}/{provider_id}` | Obtain application provider keys | GET | { `provider_id`, `service_id_key`}, {`provider_id`, 'service_id_key`}]
+|`/admin/api/{version}/provider/{provider_name}`| Create a new api key provider | PUT |  `provider_id`, `datetime`
 
 ---
 `/keys/api/{version}/provider` GET
@@ -56,6 +58,9 @@
 }
 ```
 ---
+
+Should this be in the /admin space?
+
 `/keys/api/{version}/consumer/{application_id}` PUT
 ```json
 {
