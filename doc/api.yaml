@@ -1,0 +1,114 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/Logic-gate/TEST/1.0.0
+info:
+  description: Proposed API
+  version: "1.0.0"
+  title: Mock API
+  contact:
+    email: email@your-company.com
+  license:
+    name: Unknown
+    url: 'later'
+tags:
+  - name: admins
+    description: Admin calls
+  - name: consumers
+    description: User calls
+paths:
+  /keys/api/{version}/provider/:
+    get:
+      tags:
+        - consumers
+      summary: Provider ID list
+      operationId: searchInventory
+      description: |
+        Returns a list of providers
+      parameters:
+        - in: path
+          name: version
+          description: API version
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns a list of providers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/providers'
+        '400':
+          description: bad input parameter
+  /keys/api/{version}/provider/{provider_id}:
+    get:
+      tags:
+        - consumers
+        - admins
+      summary: Service API KEY
+      description: |
+        Returns the provider id api key aka service api key
+      parameters:
+        - in: path
+          name: version
+          description: API version
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: provider_id
+          description: Internal ID for available services
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Return service api key
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/provider_providerID'
+        '400':
+          description: bad input parameter
+components:
+  schemas:
+    providers:
+      type: array
+      items:
+        type: object
+        properties:
+          provider_id:
+            type: string
+            format: uuid
+          name:
+            type: string
+        example:
+        - provider_id: d290f1ee-6c54-4b01-90e6-d701748f0851
+          name: Mapbox
+        - provider_id: d290f1ee-6c54-4b01-90e6-78987hj23678
+          name: Here
+    provider_providerID:
+      type: object
+      required:
+        - provider_id
+        - keypeer_api_key
+        - token
+      properties:
+        provider_id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        keypeer_api_key:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-j78b390f0367
+        token:
+          type: string
+          format: base64
+          example: dG9rZW4gZXhhbXBsZSBpbiBiYXNlNjQ=
