@@ -62,4 +62,20 @@ Durch Eigenentwicklung und im Gespräch mit weiteren Entwickler wurde mir klar d
 
 Die Motivation mich bei der Prototypefund zu bewerben stammt aus der Entwicklung einer Anwendung vor 2 Jahren die den Brightsky API nutzt (https://github.com/poetaster/harbour-dwd).  Durch Brightsky wurde mir die Prototypefund erst bekannt. In gewisser Hinsicht hat auch Brightsky ein ähnliches ziel wie ich. Das vereinfachen des Nutzen von APIs.
 
+#  Skizziere kurz die wichtigsten Meilensteine, die im Förderzeitraum umgesetzt werden sollen. * 
+
+Prototype phase:
+
+    REST-API spezifiziere
+    Sicherheitsaudit, informell, Spezifikation
+    Prototyp REST/WS-Dienst, Server
+    Prototyp eines REST-Verbrauchers, Client (Puremaps)
+    Prototyp der administrativen Schnittstellen des Servers
+
+Vorproduktion:
+
+    Vernetzung von Interessenvertretern/Entwicklern / Treffen
+    Suche nach transparenten Zahlungsanbietern, die Wert auf Datenarmut legen
+    Server Kommunikation mit Zahlungsabwicklungs Dienst
+    Sicherheitsaudit, formal
 
