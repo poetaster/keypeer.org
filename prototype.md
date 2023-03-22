@@ -1,10 +1,10 @@
 # Beschreibe dein Projekt kurz. (100w)
 
-Das keypeer Projekt ist ein Schlüssel dienst, im Sinne von API (Application Programming Interface) Schlüssel, keys.
+Das keypeer Projekt ist ein Schlüssel-Dienst, im Sinne von API (Application Programming Interface) Schlüssel, keys.
 
-Entwickler von Free Open Source Software (FOSS) ermöglicht keeypeer einen abgabenpflichtigen Dienst in der eigenen App einzubinden und bei einem Nutzer frei zu schalten der Bezahlt hat ohne Geschäftsbeziehung und ohne Personen Daten zu speichern. Nutzern ermöglicht keypeer dritt Anbieter Diensten in Apps zu unterstützen und somit FOSS.
+keypeer ermöglicht Entwicklern von Free Open Source Software (FOSS), einen abgabenpflichtigen Dienst in der eigenen App einzubinden und bei einem Nutzer frei zu schalten, der Bezahlt hat, ohne Geschäftsbeziehung und ohne Personen-Daten zu speichern. Nutzern ermöglicht keypeer, Dritt-Anbieter-Dienste in Apps zu unterstützen und somit FOSS.
 
-keypeer selbst nimmt keine Bezahlung entgegen sondern registriert Anonyme Nutzer Schlüssel und verbindet die mit einem dritt Service API key. Zahlungen werden von einem Verein mit Hilfe von, zum Beispiel, https://opencollective.com/europe angenommen und ausgegeben.
+keypeer selbst nimmt keine Bezahlung entgegen, sondern registriert anonyme Nutzer-Schlüssel und verbindet diese mit einem Dritt-Service API key. Zahlungen werden von einem Verein mit Hilfe von, zum Beispiel, Open Collective Europe (https://opencollective.com/europe) angenommen und ausgegeben.
 
 #  Welche gesellschaftliche Herausforderung willst du mit dem Projekt angehen? * (175w)
 
@@ -16,15 +16,16 @@ Ziel ist das bündeln von Nutzer Zahlungen um dritt Dienste zu Zahlen, was Einze
 
 # Wie willst du dein Projekt technisch umsetzen? * (175w)
 
-Der Server besteht aus einem Web Service ( REST API ), eine frei erreichbare Schnittstelle die Entwickler einbinden können um Nutzer Marken anonym im keypeer zu prüfen. Wurde bei keypeer die Marke als Turnus gemäß bezahlt registriert, kann ein zusätzlicher Dienst freit geschaltet werden.
+Der Server besteht aus einem Web Service ( REST API ), eine frei erreichbare Schnittstelle, die Entwickler einbinden können, um Nutzer-Marken anonym im keypeer zu prüfen. Wurde bei keypeer die Marke als turnusgemäß bezahlt registriert, kann ein zusätzlicher Dienst freigeschaltet werden.
 
-Die API wird im OpenAPI (https://www.openapis.org  Swagger YAML ) format spezifiziert , was somit unabhängig von der endgültigen Umsetzung bleibt.
+Die API wird im OpenAPI (https://www.openapis.org Swagger YAML ) format spezifiziert , was somit unabhängig von der endgültigen Umsetzung bleibt.
 
-Dieser REST Prototype wird mittels Flask mit der Connexion Library und Swagger in Python entwickelt. Das nutzen von Connexion und Swagger gewährleistet das die OpenAPI Endpunkte sowohl Standard Konform sind als auch direkt Dokumentation zur Verfügung stellen.
+Dieser REST Prototype wird mittels Flask mit der Connexion Library und Swagger in Python entwickelt. Die Nutzung von Connexion und Swagger gewährleistet, daß die OpenAPI Endpunkte sowohl Standard Konform sind als auch direkt Dokumentation zur Verfügung stellen.
 
-Anvisiert ist eine Zero Proof Datenbank, basierend auf Circuitree, https://ieeexplore.ieee.org/document/9718332 zu nutzen um Nutzer Marken zu speichern und zu verifizieren ohne direkt Personen bezogene Daten zu benutzen.
+Anvisiert ist eine Zero Proof Datenbank, basierend auf Circuitree, Circuitree: A Datalog Reasoner in Zero-Knowledge | IEEE Journals & Magazine | IEEE Xplore ( https://ieeexplore.ieee.org/document/9718332 ) zu nutzen um Nutzer-Marken zu speichern und zu verifizieren, ohne direkt personenbezogene Daten zu benutzen.
 
-Während der Prototype-phase werden Javascript und C++ Clients die Schnittstelle testen. Als erstes, die Mapping Anwendung Puremaps https://github.com/rinigus/pure-maps
+Während der Prototype-phase werden Javascript und C++ Clients die Schnittstelle testen. Als erstes, die Mapping Anwendung Puremaps GitHub - rinigus/pure-maps: Maps and navigation ( https://github.com/rinigus/pure-maps). 
+
 
 #  Hast du schon an der Idee gearbeitet? Wenn ja, beschreibe kurz den aktuellen Stand und erkläre die geplanten Neuerungen. * (100w)
 
@@ -36,15 +37,15 @@ Unter anderem wird mit Ruben De Smet, https://ieeexplore.ieee.org/document/97183
 
 #  Welche ähnlichen Ansätze gibt es schon und was wird dein Projekt anders bzw. besser machen? * (60w)
 
-Keine sind uns bekannt.
+Uns sind keine ähnlichen Projekte bekannt.
 
 # Wer ist die Zielgruppe und wie soll dein Projekt sie erreichen? * 
 
 Sowohl App Endnutzer als Entwickler. Die Anzahl an Anwendung die API keys brauchen wächst stetig und betrifft alle möglichen Bereiche. In erster Linie geht es um Entwicklung von FOSS Anwendungen dem sonst die Mittel fehlen zu unterstützen und dem Nutzer die Wahl alternativer Apps zu gewährleisten.
 
-Die Prototyp Phase wird mit Puremaps, die Karten Anwendung, realisiert da es hier schon eine Kollaboration statt findet und der Entwickler von Puremaps auch mit anderen Karten Anwendungs- Entwickler in Kontakt steht. Wir streben auch Finanzierung zwischen Projekten an.
+Die Prototyp Phase wird mit Puremaps, die Karten Anwendung, realisiert, da hier schon eine Zusammenarbeit stattfindet und der Entwickler von Puremaps auch mit anderen Karten-Anwendungs-Entwicklern in Kontakt steht. Wir streben auch Finanzierung zwischen Projekten an.
 
-Andere Bereiche die wir anvisiert haben sind Anwendung aus dem Bereichen Gesundheit und Bildung.
+Andere Bereiche, die wir anvisiert haben, sind Anwendung aus dem Bereichen Gesundheit und Bildung.
 
 # An welchen Software-Projekten hast du / habt ihr bisher gearbeitet? Bei Open-Source-Projekten bitte einen Link zum Repository angeben
 
@@ -54,19 +55,19 @@ https://github.com/poetaster/tidings - RSS/OPML Reader, (Entwickler Team, Mainta
 
 # Erfahrung, Hintergrund, Motivation, Perspektive: Was sollen wir über dich (bzw. euch) wissen und bei der Auswahl berücksichtigen? * 
 
-Ich bin seit Anfang der 1990er Jahre involviert in FOSS/OSS Projekten. In den 1990er, netBSD und einige Apache Foundation Projekte (eg. Cocoon). Sowohl als Entwickler als auch im Bereich Gesellschaftlicher Entwicklung. Als mit Inhaber der Newthinking Communications GmbH habe ich die Gründung der https://re-publica.com und https://netzpolitik.org mit getragen. Weitere bestehende Projekte die wir aufgebaut haben sind https://berlinbuzzwords.de und die https://foss-backstage.de . Bis ende 2022 war ich bei netzpolitik.org angestellt.
+Ich bin seit Anfang der 1990er Jahre involviert in FOSS/OSS Projekten. In den 1990er, netBSD und einige Apache Foundation Projekte (eg. Cocoon). Sowohl als Entwickler als auch im Bereich Gesellschaftlicher Entwicklung. Als Mitinhaber der Newthinking Communications GmbH habe ich die Gründung der https://re-publica.com und https://netzpolitik.org mit getragen. Weitere bestehende Projekte, die wir aufgebaut haben, sind https://berlinbuzzwords.de und die https://foss-backstage.de . Bis Ende 2022 war ich bei Netzpolitik.org angestellt.
 
-Als Technischer Leiter und Programmierer bin ich an verschiedenen FOSS orientierten Initiativen  beteiligt. Seit etwa 2018 bin ich zunehmend an der Entwicklung von alternativen mobilen Plattformen, insbesondere SailfishOs, beteiligt. Bis jetzt habe ich mich hauptsächlich um den Erhalt von Anwendungen und neu Entwicklung von Apps bemüht, mit Schwerpunkt Media. Bild, Video und Ton Bearbeitungs- Apps sind Schwerpunkte aus Leidenschaft.
+Als Technischer Leiter und Programmierer bin ich an verschiedenen FOSS orientierten Initiativen beteiligt. Seit etwa 2018 bin ich zunehmend an der Entwicklung von alternativen mobilen Plattformen, insbesondere SailfishOS, beteiligt. Bis jetzt habe ich mich hauptsächlich um den Erhalt von Anwendungen und neu Entwicklung von Apps bemüht, mit Schwerpunkt Media, Bild-, Video- und Ton-Bearbeitungs-Apps sind Schwerpunkte aus Leidenschaft.
 
-Durch Eigenentwicklung und im Gespräch mit weiteren Entwickler wurde mir klar das wir was unternehmen können um die Kaufkraft von FOSS Unterstützer für viele interagierenden Projekten zu bündeln. Ich sehe es als eine Art 'Crowd Funding Model'.
+Durch Eigenentwicklung und im Gespräch mit weiteren Entwicklern wurde mir klar, daß wir etwas unternehmen können, um die Kaufkraft von FOSS Unterstützern für viele interagierende Projekte zu bündeln. Ich sehe dies als eine Art ‘Crowd Funding Model’.
 
-Die Motivation mich bei der Prototypefund zu bewerben stammt aus der Entwicklung einer Anwendung vor 2 Jahren die den Brightsky API nutzt (https://github.com/poetaster/harbour-dwd).  Durch Brightsky wurde mir die Prototypefund erst bekannt. In gewisser Hinsicht hat auch Brightsky ein ähnliches ziel wie ich. Das vereinfachen des Nutzen von APIs.
+Die Motivation mich bei der Prototypefund zu bewerben stammt aus der Entwicklung einer Anwendung vor 2 Jahren die den Brightsky API nutzt (https://github.com/poetaster/harbour-dwd).  Durch Brightsky wurde mir die Prototypefund erst bekannt. In gewisser Hinsicht hat auch Brightsky ein ähnliches Ziel wie ich. Das vereinfachen des Nutzens von APIs.
 
 #  Skizziere kurz die wichtigsten Meilensteine, die im Förderzeitraum umgesetzt werden sollen. * 
 
 Prototype phase:
 
-    REST-API spezifiziere
+    REST-API spezifizieren
     Sicherheitsaudit, informell, Spezifikation
     Prototyp REST/WS-Dienst, Server
     Prototyp eines REST-Verbrauchers, Client (Puremaps)
