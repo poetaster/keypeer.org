@@ -29,11 +29,11 @@ Während der Prototype-phase werden Javascript und C++ Clients die Schnittstelle
 
 #  Hast du schon an der Idee gearbeitet? Wenn ja, beschreibe kurz den aktuellen Stand und erkläre die geplanten Neuerungen. * (100w)
 
-Bis jetzt wurde diskutiert und die ersten API Entwürfe skizziert. https://github.com/poetaster/keypeer.org/blob/main/doc/api-rest.md
+Bis jetzt wurde diskutiert und die ersten API Entwürfe skizziert. https://github.com/poetaster/keypeer.org/blob/main/doc/api/api.yaml
 
 Impulsgeber is der rinigus,https://github.com/rinigus/pure-maps. Die Puremaps Anwendung wird als 'Konsument' in der Prototyp Phase dienen.
 
-Unter anderem wird mit Ruben De Smet, https://ieeexplore.ieee.org/document/9718332 , ein Zero Knowledge Ansatz der Nutzer Verifikation diskutiert.
+Unter anderem wird mit Ruben De Smet, Vrije Universiteit Brussel (https://ieeexplore.ieee.org/document/9718332) , ein Zero Knowledge Ansatz der Nutzer Verifikation diskutiert. 
 
 #  Welche ähnlichen Ansätze gibt es schon und was wird dein Projekt anders bzw. besser machen? * (60w)
 
@@ -66,17 +66,18 @@ Die Motivation mich bei der Prototypefund zu bewerben stammt aus der Entwicklung
 #  Skizziere kurz die wichtigsten Meilensteine, die im Förderzeitraum umgesetzt werden sollen. * 
 
 Prototype phase:
-
     REST-API spezifizieren
-    Sicherheitsaudit, informell, Spezifikation
     Prototyp REST/WS-Dienst, Server
+    Sicherheitsaudit, informell
     Prototyp eines REST-Verbrauchers, Client (Puremaps)
     Prototyp der administrativen Schnittstellen des Servers
 
 Vorproduktion:
 
     Vernetzung von Interessenvertretern/Entwicklern / Treffen
-    Suche nach transparenten Zahlungsanbietern, die Wert auf Datenarmut legen
-    Server Kommunikation mit Zahlungsabwicklungs Dienst
+    Gespräche Zahlungsanbietern, Vertrag
+    Server Kommunikation mit Zahlungsanbieter Dienst
     Sicherheitsaudit, formal
+
+
 
