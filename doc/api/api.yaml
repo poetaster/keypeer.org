@@ -5,12 +5,12 @@ servers:
     url: https://api.keypeer.org
 info:
   description: Proposed API
-  version: "1.0.0"
+  version: "1.0"
   title: Keypeer Api
   contact:
     email: admin@keypeer.org
   license:
-    name: Unknown
+    name: GPLv2
     url: ''
 tags:
   - name: admins
@@ -18,7 +18,7 @@ tags:
   - name: consumers
     description: Operations available to regular users
 paths:
-  /keys/api/1.0.0/provider:
+  /v10/providers:
     get:
       tags:
         - consumers
@@ -35,7 +35,7 @@ paths:
                   $ref: '#/components/schemas/provider_'
         '400':
           description: bad input parameter
-  /keys/api/1.0.0/provider/{provider_id}:
+  /v10/providers/{provider_id}:
     get:
       tags:
         - consumers
@@ -61,7 +61,7 @@ paths:
                   $ref: '#/components/schemas/provider_providerID'
         '400':
           description: bad input parameter
-  /keys/api/1.0.0/consumer/{consumer_id}:
+  /v10/consumers/{consumer_id}:
     get:
       tags:
         - consumers
@@ -86,10 +86,11 @@ paths:
                   $ref: '#/components/schemas/consumer_consumerData'
         '400':
           description: bad input parameter
-  /keys/api/1.0.0/consumer:
+  /v10/consumers:
     get:
       tags:
         - consumers
+        - admins
       summary: Request user data
       description: |
         Returns a dict userids
@@ -104,10 +105,11 @@ paths:
                   $ref: '#/components/schemas/consumer_'
         '400':
           description: bad input parameter
-  /keys/api/1.0.0/consumer/{consumer_id}/application/{application_id}:
+  /v10/consumers/{consumer_id}/applications/{application_id}:
     get:
       tags:
         - consumers
+        - admins
       summary: Retrieve Service Api keys for users application, application_id
       description: |
         Returns service api key
@@ -138,6 +140,7 @@ paths:
     post:
       tags:
         - consumers
+        - admins
       summary: Add consumer application
       description: |
         Returns true if consumer application is added
@@ -186,10 +189,9 @@ paths:
       responses:
         '201':
           description: delete success
-  /keys/api/1.0.0/application:
+  /v10/applications:
     get:
       tags:
-        - consumers
         - admins
       summary: Return array of applications
       description: |
@@ -221,7 +223,7 @@ paths:
       responses:
         '201':
           description: success
-  /keys/api/1.0.0/application/{application_id}:
+  /v10/applications/{application_id}:
     get:
       tags:
         - consumers
@@ -247,7 +249,7 @@ paths:
                   $ref: '#/components/schemas/application_applicationID'
         '400':
           description: bad input parameter
-  /keys/api/1.0.0/application/{application_id}/provider:
+  /v10/applications/{application_id}/providers:
     get:
       tags:
         - consumers
@@ -272,7 +274,7 @@ paths:
                   $ref: '#/components/schemas/application_applicationID_providerID'
         '400':
           description: bad input parameter
-  /keys/api/1.0.0/application/{application_id}/provider/{provider_id}:
+  /v10/applications/{application_id}/providers/{provider_id}:
     get:
       tags:
         - consumers
