@@ -2,36 +2,32 @@ openapi: 3.0.0
 servers:
   # Added by API Auto Mocking Plugin
   - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/Logic-gate/TEST/1.0.0
+    url: https://api.keypeer.org
 info:
   description: Proposed API
-  version: "1.0.0"
-  title: Mock API
+  version: "1.0"
+  title: Keypeer Api
   contact:
-    email: email@your-company.com
+    email: admin@keypeer.org
   license:
-    name: Unknown
-    url: ''
+    name: GPLv2
+    url: 'https://api.keypeer.org/v10'
 tags:
   - name: admins
     description: Secured Admin-only calls
   - name: consumers
-    description: Operations available to regular users
+    description: Operations available on consumers
+  - name: providers
+    description: Operations available on providers
+  - name: applications
+    description: Operations available on applications
 paths:
-  /keys/api/{version}/provider/:
+  /v10/providers:
     get:
       tags:
-        - consumers
+        - providers
       summary: Provider ID list
-      description: |
-        Returns a list of providers
-      parameters:
-        - in: path
-          name: version
-          description: API version
-          required: true
-          schema:
-            type: string
+      description: Returns a list of providers
       responses:
         '200':
           description: Returns a list of providers
@@ -40,24 +36,49 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/provider_'
+                  $ref: '#/components/schemas/provider'
         '400':
           description: bad input parameter
-  /keys/api/{version}/provider/{provider_id}:
-    get:
+  /v10/providers/{name}:
+    post:
       tags:
-        - consumers
         - admins
-      summary: Service API KEY
+      summary: Add provider
       description: |
-        Returns the provider id api key aka service api key
+        Returns new provider ID (and?) if provider is added
       parameters:
         - in: path
-          name: version
-          description: API version
+          name: name
+          description: Name of the provider to create
           required: true
           schema:
             type: string
+      requestBody:
+        description: Request to add consumer application 
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/provider'
+      responses:
+        '200':
+          description: Return New Provider name/key
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/provider'
+        '400':
+          description: bad input parameter
+  /v10/providers/{provider_id}:
+    get:
+      tags:
+        - providers
+      summary: Service API KEY
+      description: |
+        Returns the provider service api key for {provider_id} 
+      parameters:
         - in: path
           name: provider_id
           description: Internal ID for available services
@@ -72,10 +93,10 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/provider_providerID'
+                  $ref: '#/components/schemas/provider'
         '400':
           description: bad input parameter
-  /keys/api/{version}/consumer/{consumer_id}:
+  /v10/consumers/{consumer_id}:
     get:
       tags:
         - consumers
@@ -83,12 +104,6 @@ paths:
       description: |
         Returns a dict containing varoius user data
       parameters:
-        - in: path
-          name: version
-          description: API version
-          required: true
-          schema:
-            type: string
         - in: path
           name: consumer_id
           description: End User ID
@@ -103,20 +118,38 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/consumer_consumerData'
+                  $ref: '#/components/schemas/consumer'
         '400':
           description: bad input parameter
-  /keys/api/{version}/consumer/{application_id}:
+  /v10/consumers:
+    get:
+      tags:
+        - admins
+      summary: Request user data
+      description: |
+        Returns a dict userids
+      responses:
+        '200':
+          description: Return Userids
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/consumer'
+        '400':
+          description: bad input parameter
+  /v10/consumers/{consumer_id}/applications/{application_id}:
     get:
       tags:
         - consumers
-      summary: Retrieve Service Api for application
+      summary: Retrieve Service Api keys for users application, application_id
       description: |
         Returns service api key
       parameters:
         - in: path
-          name: version
-          description: API version
+          name: consumer_id
+          description: Consumer ID
           required: true
           schema:
             type: string
@@ -128,25 +161,26 @@ paths:
             type: string
       responses:
         '200':
-          description: Returns service api key
+          description: Returns service api keys for Application and user
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/consumer_providerID'
+                  $ref: '#/components/schemas/consumer_application'
         '400':
           description: bad input parameter
     post:
       tags:
         - consumers
+        - admins
       summary: Add consumer application
       description: |
         Returns true if consumer application is added
       parameters:
         - in: path
-          name: version
-          description: API version
+          name: consumer_id
+          description: consumer_id
           required: true
           schema:
             type: string
@@ -162,20 +196,21 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/consumer_consumerAddAppplication'
+              $ref: '#/components/schemas/consumer'
       responses:
         '201':
           description: success
-    put:
+    delete:
       tags:
         - consumers
-      summary: Update consumer application
+        - admins
+      summary: remove consumer application
       description: |
         Returns true if consumer application is updated
       parameters:
         - in: path
-          name: version
-          description: API version
+          name: consumer_id
+          description: Consumer ID
           required: true
           schema:
             type: string
@@ -185,31 +220,137 @@ paths:
           required: true
           schema:
             type: string
+      responses:
+        '201':
+          description: delete success
+  /v10/consumers/{consumer_id}/providers/{provider_id}:
+    get:
+      tags:
+        - consumers
+      summary: Retrieve Service Api keys for users provider, provider_id
+      description: |
+        Returns service api key
+      parameters:
+        - in: path
+          name: consumer_id
+          description: Consumer ID
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: provider_id
+          description: Consumer Provider ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Returns service api keys for Provider and user
+          content:
+            provider/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/consumer_provider'
+        '400':
+          description: bad input parameter
+    post:
+      tags:
+        - consumers
+        - admins
+      summary: Add consumer provider
+      description: |
+        Returns true if consumer provider is added
+      parameters:
+        - in: path
+          name: consumer_id
+          description: consumer_id
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: provider_id
+          description: Consumer Provider ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Request to add consumer provider 
+        required: true
+        content:
+          provider/json:
+            schema:
+              $ref: '#/components/schemas/consumer'
+      responses:
+        '201':
+          description: success
+    delete:
+      tags:
+        - consumers
+        - admins
+      summary: remove consumer provider
+      description: |
+        Returns true if consumer provider is updated
+      parameters:
+        - in: path
+          name: consumer_id
+          description: Consumer ID
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: provider_id
+          description: Consumer Provider ID
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: delete success
+
+  /v10/applications:
+    get:
+      tags:
+        - admins
+      summary: Return array of applications
+      description: |
+         Obtain list of application providers
+      responses:
+        '200':
+          description: Returns service api key
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/application'
+        '400':
+          description: bad input parameter
+    post:
+      tags:
+        - admins
+      summary: Add application application
+      description: |
+        Returns true if consumer application is added
       requestBody:
         description: Request to add consumer application 
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/consumer_consumerUpdateAppplication'
+              $ref: '#/components/schemas/application'
       responses:
         '201':
-          description: update success
-  /keys/api/{version}/application/{application_id}:
+          description: success
+  /v10/applications/{application_id}:
     get:
       tags:
         - consumers
         - admins
-      summary: Return array of providers
+      summary: Return array of providers for an application
       description: |
          Obtain list of application providers
       parameters:
-        - in: path
-          name: version
-          description: API version
-          required: true
-          schema:
-            type: string
         - in: path
           name: application_id
           description: Consumer Application ID
@@ -224,23 +365,42 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/application_applicationID'
+                  $ref: '#/components/schemas/application'
         '400':
           description: bad input parameter
-  /keys/api/{version}/application/{application_id}/{provider_id}:
+  /v10/applications/{application_id}/providers:
     get:
       tags:
         - consumers
-      summary: Return array of application provider keys
+      summary: Return array of application providers
       description: |
          Obtain application provider keys
       parameters:
         - in: path
-          name: version
-          description: API version
+          name: application_id
+          description: Consumer Application ID
           required: true
           schema:
             type: string
+      responses:
+        '200':
+          description: Return array of application provider keys
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/application'
+        '400':
+          description: bad input parameter
+  /v10/applications/{application_id}/providers/{provider_id}:
+    get:
+      tags:
+        - consumers
+      summary: Return provider keys for application & provider
+      description: |
+         Obtain application provider keys
+      parameters:
         - in: path
           name: application_id
           description: Consumer Application ID
@@ -261,109 +421,70 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/application_applicationID_providerID'
+                  $ref: '#/components/schemas/application'
         '400':
           description: bad input parameter
 components:
   schemas:
-    provider_:
-      type: array
-      items:
-        type: object
-        properties:
-          provider_id:
-            type: string
-            format: uuid
-          name:
-            type: string
-        example:
-        - provider_id: d290f1ee-6c54-4b01-90e6-d701748f0851
-          name: Mapbox
-        - provider_id: d290f1ee-6c54-4b01-90e6-78987hj23678
-          name: Here
-    provider_providerID:
+    provider:
       type: object
-      required:
-        - provider_id
-        - keypeer_api_key
-        - token
       properties:
         provider_id:
+          type: integer
+        uuid:
           type: string
           format: uuid
-          example: d290f1ee-6c54-4b01-90e6-d701748f0851
-        keypeer_api_key:
+        name:
           type: string
-          format: uuid
-          example: d290f1ee-6c54-4b01-90e6-j78b390f0367
-        token:
+        uri:
           type: string
-          format: base64
-          example: dG9rZW4gZXhhbXBsZSBpbiBiYXNlNjQ=
-    consumer_consumerData:
+          format: url
+      example:
+      - provider_id: 1
+        uuid: d290f1ee-6c54-4b01-90e6-d701748f0851
+        name: Mapbox
+        uri: https://mapbox.com
+      - provider_id: 2
+        uuid: d290f1ee-6c54-4b01-90e6-78987hj23678
+        name: Here
+        uri: https://here.com
+    consumer:
       type: array
       items:
-        type: object
-        properties:
-          application_id:
-            type: string
-            format: uuid
-          provider_id:
-            type: string
-            format: uuid
-          expiry:
-            type: string
-            description: ISO 8601 Format
-        example:
-        - application_id: d290f1ee-6c54-4b01-90e6-hjsd6777h389
-          provider_id: d290f1ee-6c54-4b01-90e6-78987hj23678
-          expiry: 2023-03-25T16:33:23Z
-        - application_id: d290f1ee-6c54-4b01-90e6-hjsd6777h389
-          provider_id: d290f1ee-6c54-4b01-90e6-78987hj23678
-          expiry: 2023-03-25T16:33:23Z
-    consumer_consumerAddAppplication:
-      type: object
-      properties:
-        consumer_id:
-          type: string
-          format: uuid
-        keypeer_api_key:
-          type: string
-          format: uuid
-        application_id:
-          type: string
-          format: uuid
-        expiry:
-          type: string
-          description: ISO 8601 Format
-      example:
-      #Ask poetaster: Should we remove {application_id} from path since it's in request body?
-      - consumer_id: d290f1ee-6c54-4b01-90e6-hjsd6777h389
-        keypeer_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
-        application_id: d290f1ee-6c54-4b01-90e6-78987hj23678
-        expiry: 2023-03-25T16:33:23Z
-    consumer_consumerUpdateAppplication:
         type: object
         properties:
           consumer_id:
+            type: integer
+          uuid:
             type: string
             format: uuid
-          keypeer_api_key:
-            type: string
-            format: uuid
+        example:
+        - consumer_id: 1
+          uuid: d290f1ff-6c54-4b01-90e6-d701748f0851
+        - consumer_id: 2
+          uuid: d290f1ff-6c54-4b01-90e6-78987hj23678
+    consumer_application:
+      type: array
+      items:
+        type: object
+        properties:
+          consumer_id:
+            type: integer
           application_id:
-            type: string
-            format: uuid
+            type: integer
+          provider_id:
+            type: integer
           expiry:
             type: string
             description: ISO 8601 Format
         example:
-        #Ask poetaster: Should we remove {application_id} from path since it's in request body?
-        - consumer_id: d290f1ee-6c54-4b01-90e6-hjsd6777h389
-          keypeer_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
-          application_id: d290f1ee-6c54-4b01-90e6-78987hj23678
+        - application_id: d290f1ee-6c54-4b01-90e6-hjsd6777h389
+          provider_id: d290f1ee-6c54-4b01-90e6-78987hj23678
           expiry: 2023-03-25T16:33:23Z
-    consumer_providerID:
+        - application_id: d290f1ee-6c54-4b01-90e6-hjsd6777h389
+          provider_id: d290f1ee-6c54-4b01-90e6-78987hj23678
+          expiry: 2023-03-25T16:33:23Z
+    consumer_provider:
       type: array
       items:
           type: object
@@ -379,36 +500,24 @@ components:
             service_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
           - provider_id: d290f1ee-6c54-4b01-90e6-78987hj23678
             service_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
-    application_applicationID:
+    application:
       type: array
       items:
-          type: object
-          properties:
-            keypeer_api_key:
-              type: string
-              format: uuid
-            application_id:
-              type: string
-              format: uuid
-          example:
-          - keypeer_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
-            application_id: d290f1ee-6c54-4b01-90e6-78987hj23678
-          - keypeer_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
-            application_id: d290f1ee-6c54-4b01-90e6-78987hj23678
-    application_applicationID_providerID:
-      type: array
-      items:
-          type: object
-          properties:
-            service_api_key:
-              type: string
-              format: uuid
-            expiry:
-              type: string
-              description: ISO 8601 Format
-          example:
-          - service_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
-            expiry: 2023-03-25T16:33:23Z
-          - service_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
-            expiry: 2023-03-25T16:33:23Z
-      
+        type: object
+        properties:  
+          application_id:
+            type: integer
+          uuid:
+            type: string
+            format: uuid
+          name:
+            type: string
+          uri:
+            type: string
+            format: url
+        example:
+        - application_id: 1
+          uuid: d290f1ee-6c54-4b01-90e6-d701748f0851
+          name: Puremaps
+          uri: https://puremaps.org
+
