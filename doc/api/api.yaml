@@ -170,7 +170,7 @@ paths:
                   $ref: '#/components/schemas/consumer_application'
         '400':
           description: bad input parameter
-    put:
+    post:
       tags:
         - consumers
         - admins
@@ -254,7 +254,7 @@ paths:
                   $ref: '#/components/schemas/consumer_provider'
         '400':
           description: bad input parameter
-    put:
+    post:
       tags:
         - consumers
         - admins
