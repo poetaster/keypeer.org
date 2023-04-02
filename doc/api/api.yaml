@@ -1,8 +1,7 @@
 openapi: 3.0.0
 servers:
-  # Added by API Auto Mocking Plugin
-  - description: SwaggerHub API Auto Mocking
-    url: https://api.keypeer.org
+  - description: API Auto Mocking
+    url: https://api.keypeer.org/v10
 info:
   description: Proposed API
   version: "1.0"
@@ -329,11 +328,11 @@ paths:
     post:
       tags:
         - admins
-      summary: Add application application
+      summary: Add application
       description: |
         Returns true if consumer application is added
       requestBody:
-        description: Request to add consumer application 
+        description: Request to add an application 
         required: true
         content:
           application/json:
@@ -427,29 +426,31 @@ paths:
 components:
   schemas:
     provider:
-      type: object
-      properties:
-        provider_id:
-          type: integer
-        uuid:
-          type: string
-          format: uuid
-        name:
-          type: string
-        uri:
-          type: string
-          format: url
+      type: array
+      required:
+        - name
+        - uri
+      items:
+        type: object
+        properties:
+          provider_id:
+            type: integer
+          uuid:
+            type: string
+            format: uuid
+          name:
+            type: string
+          uri:
+            type: string
+            format: url
       example:
-      - provider_id: 1
-        uuid: d290f1ee-6c54-4b01-90e6-d701748f0851
-        name: Mapbox
-        uri: https://mapbox.com
-      - provider_id: 2
-        uuid: d290f1ee-6c54-4b01-90e6-78987hj23678
-        name: Here
-        uri: https://here.com
+        -
+          name: Mapbox
+          uri: https://mapbox.com
     consumer:
       type: array
+      required: 
+        - uuid
       items:
         type: object
         properties:
@@ -459,10 +460,8 @@ components:
             type: string
             format: uuid
         example:
-        - consumer_id: 1
+        - 
           uuid: d290f1ff-6c54-4b01-90e6-d701748f0851
-        - consumer_id: 2
-          uuid: d290f1ff-6c54-4b01-90e6-78987hj23678
     consumer_application:
       type: array
       items:
@@ -502,22 +501,28 @@ components:
             service_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
     application:
       type: array
+      required:
+        - name
+        - uri
       items:
         type: object
-        properties:  
+        properties:
           application_id:
             type: integer
+            format: int64
           uuid:
             type: string
             format: uuid
           name:
             type: string
+            example: Mapbox
           uri:
             type: string
             format: url
-        example:
-        - application_id: 1
-          uuid: d290f1ee-6c54-4b01-90e6-d701748f0851
+            example: https://mapbox.com
+      example:
+        - 
           name: Puremaps
           uri: https://puremaps.org
+
 
