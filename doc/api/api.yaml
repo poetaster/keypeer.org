@@ -328,7 +328,7 @@ paths:
     get:
       tags:
         - applications
-      summary: Return array of providers for an application
+      summary: Return application name, uri, uuid
       description: |
          Obtain list of application providers
       parameters:
@@ -378,7 +378,7 @@ paths:
     get:
       tags:
         - applications
-      summary: Return provider keys for application & provider
+      summary: Return provider key for provider_id
       description: |
          Obtain application provider keys
       parameters:
@@ -402,7 +402,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/application'
+                  $ref: '#/components/schemas/application_provider'
         '400':
           description: bad input parameter
 components:
@@ -524,5 +524,32 @@ components:
         - 
           name: Puremaps
           uri: https://puremaps.org
+    application_provider:
+      type: array
+      required:
+      - application_id
+      - provider_id
+      - expiry
+      items:
+          type: object
+          properties:
+            application_id:
+              type: string
+              format: uuid
+            provider_id:
+              type: string
+              format: uuid
+            service_api_key:
+              type: string
+              format: uuid
+            expiry:
+              type: string
+              description: ISO 8601 Format
+          example:
+          - 
+            application_id: d290f1ee-6c54-4b01-90e6-78987hj23678
+            provider_id: d290f1ee-6c54-4b01-90e6-78987hj23678
+            service_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
+            expiry:  2023-03-25T16:33:23Z
 
 
