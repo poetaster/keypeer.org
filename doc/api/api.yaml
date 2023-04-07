@@ -417,18 +417,18 @@ components:
         properties:
           provider_id:
             type: integer
+            format: int64
+            example: 1
           uuid:
             type: string
             format: uuid
           name:
             type: string
+            example: Mapbox
           uri:
             type: string
             format: url
-      example:
-        -
-          name: Mapbox
-          uri: https://mapbox.com
+            example: https://mapbox.com
     consumer:
       type: array
       required: 
@@ -438,12 +438,12 @@ components:
         properties:
           consumer_id:
             type: integer
+            format: int64
+            example: 1
           uuid:
             type: string
             format: uuid
-        example:
-        - 
-          uuid: d290f1ff-6c54-4b01-90e6-d701748f0851
+            example: d290f1ff-6c54-4b01-90e6-d701748f0851
     consumer_application:
       type: array
       required:
@@ -457,21 +457,19 @@ components:
           consumer_id:
             type: integer
             format: int64
+            example: 1
           application_id:
             type: integer
             format: int64
+            example: 2
           provider_id:
             type: integer
             format: int64
+            example: 3
           expiry:
             type: string
             description: ISO 8601 Format
-        example:
-        - 
-          consumer_id: 1
-          application_id: 2 
-          provider_id: 3 
-          expiry: 2023-03-25T16:33:23Z
+            example: 2023-03-25T16:33:23Z
     consumer_provider:
       type: array
       required:
@@ -484,21 +482,19 @@ components:
             consumer_id:
               type: string
               format: uuid
+              example: 1
             provider_id:
               type: string
               format: uuid
+              example: d290f1ee-6c54-4b01-90e6-78987hj23698
             service_api_key:
               type: string
               format: uuid
+              example: d290f1ee-6c54-4b01-90e6-78987hj23678
             expiry:
               type: string
               description: ISO 8601 Format
-          example:
-          - 
-            consumer_id: d290f1ee-6c54-4b01-90e6-78987hj23678
-            provider_id: d290f1ee-6c54-4b01-90e6-78987hj23678
-            service_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
-            expiry:  2023-03-25T16:33:23Z
+              example: 2023-03-25T16:33:23Z
     application:
       type: array
       required:
@@ -520,10 +516,6 @@ components:
             type: string
             format: url
             example: https://mapbox.com
-      example:
-        - 
-          name: Puremaps
-          uri: https://puremaps.org
     application_provider:
       type: array
       required:
@@ -536,20 +528,17 @@ components:
             application_id:
               type: string
               format: uuid
+              example: 42409b08-c68f-44fa-94c7-a46f613e9492
             provider_id:
               type: string
               format: uuid
+              example: 253e907b-8070-4ee8-ba58-1ba4f02c097c
             service_api_key:
               type: string
               format: uuid
+              example: 1f17d5c5-a9a2-4b3d-94fc-3a6af3c037c8
             expiry:
               type: string
               description: ISO 8601 Format
-          example:
-          - 
-            application_id: d290f1ee-6c54-4b01-90e6-78987hj23678
-            provider_id: d290f1ee-6c54-4b01-90e6-78987hj23678
-            service_api_key: d290f1ee-6c54-4b01-90e6-78987hj23678
-            expiry:  2023-03-25T16:33:23Z
-
+              example: 2023-03-25T16:33:23Z
 
