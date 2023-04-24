@@ -8,6 +8,6 @@ permalink: /api-development
 
 Last week @Logic-gate pushed an initial API design into documentation. This led to a flurry of prototyping with swagger. 
 
-Currently, in order to better visualize and discuss the developmet of the api, we've put a ['mock' server up at](https://api.keypeer.org/ui).
+Currently, in order to better visualize and discuss the developmet of the api, we've put a ['mock' server up at](https://api.keypeer.org/v1.0/ui).
 
 If you have suggestions please fork and PR! 
